@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age of Pixels — Retro RTS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <!-- Main menu -->
+  <div id="menu">
+    <h1>AGE OF PIXELS</h1>
+    <p class="tagline">Gather. Build. Trade. Conquer.</p>
+    <h2>Choose your civilization</h2>
+    <div id="civ-row"></div>
+    <h2>Bot difficulty</h2>
+    <div id="diff-row"></div>
+    <button id="tut-toggle" class="diffbtn">Tutorial: ON</button>
+    <button id="btn-play">PLAY vs BOT</button>
+    <p class="soon">1v1 Online — coming soon</p>
+    <p class="howto">
+      Destroy the enemy <b>Town Hall</b> to win. Villagers gather <b>food</b>, <b>wood</b>
+      and <b>gold</b>, and construct buildings. Train an army at the Barracks, Stable and
+      Siege Workshop. Trade at the Market.
+    </p>
+  </div>
+
+  <!-- In-game HUD -->
+  <div id="hud" class="hidden">
+    <div id="topbar">
+      <span class="res"><span id="icon-food"></span><span id="res-food">0</span></span>
+      <span class="res"><span id="icon-wood"></span><span id="res-wood">0</span></span>
+      <span class="res"><span id="icon-gold"></span><span id="res-gold">0</span></span>
+      <span class="res"><span id="icon-pop"></span><span id="res-pop">0/0</span></span>
+      <span id="matchup"></span>
+      <span id="gtime">0:00</span>
+    </div>
+    <div id="bottompanel">
+      <div id="selinfo"></div>
+      <div id="actions"></div>
+      <canvas id="minimap" width="144" height="144"></canvas>
+    </div>
+    <div id="toasts"></div>
+    <div id="tutorial" class="hidden">
+      <div id="tut-step"></div>
+      <div id="tut-text"></div>
+      <div class="tut-buttons">
+        <button id="tut-next" class="hidden">NEXT</button>
+        <button id="tut-skip">Skip tutorial</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Victory / defeat -->
+  <div id="endscreen" class="hidden">
+    <h1 id="endtitle"></h1>
+    <p id="endmsg"></p>
+    <button id="btn-again">BACK TO MENU</button>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/pathfinding.js"></script>
+  <script src="js/entities.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/input.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/tutorial.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
